@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.project;
+package com.project.basic;
 
 import java.util.ArrayList;
 import java.util.List;

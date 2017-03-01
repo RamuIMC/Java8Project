@@ -33,18 +33,15 @@ public class ExecutorsTest {
 			} catch (Exception e) {
 				System.out.println("error in sleep method");
 				e.printStackTrace();
-			}
-		    
-		});
-		
+			}		    
+		});		
 		try{
 			System.out.println("will shut down using shutDown()");
 			System.out.println("current time is : "+LocalDateTime.now());
 			es.shutdown();
 			System.out.println("current time after shutdown() is : "+LocalDateTime.now());
 			es.awaitTermination(5, TimeUnit.SECONDS);
-			System.out.println("current time await is : "+LocalDateTime.now());
-			
+			System.out.println("current time await is : "+LocalDateTime.now());			
 		}
 		catch(InterruptedException e){
 			e.printStackTrace();

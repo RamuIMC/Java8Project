@@ -26,7 +26,7 @@ public class ExecutorsTest {
 		es.submit(()->{
 			String thread = Thread.currentThread().getName();
 			try {
-				TimeUnit.SECONDS.sleep(8);
+				TimeUnit.SECONDS.sleep(3);
 				System.out.println("Hello " + thread);
 			    int a= 5*5;
 			    System.out.println("multiply is : "+a);
@@ -40,7 +40,7 @@ public class ExecutorsTest {
 			System.out.println("current time is : "+LocalDateTime.now());
 			es.shutdown();
 			System.out.println("current time after shutdown() is : "+LocalDateTime.now());
-			es.awaitTermination(5, TimeUnit.SECONDS);
+			es.awaitTermination(3, TimeUnit.SECONDS);
 			System.out.println("current time await is : "+LocalDateTime.now());			
 		}
 		catch(InterruptedException e){
@@ -50,7 +50,7 @@ public class ExecutorsTest {
 			if(! es.isTerminated()){
 				  System.err.println("cancel non-finished tasks");
 			}
-			 es.shutdownNow();
+			// es.shutdownNow();
 			    System.out.println("shutdown finished");
 		}
 
